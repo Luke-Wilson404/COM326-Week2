@@ -1,0 +1,128 @@
+using System.Runtime.InteropServices.Marshalling;
+class Program
+{
+    public static void Main(String[] args)
+    {
+        //Fix Tasks: 2, 3, 4 (int ans), 6, 7, 8 , 9 , 10
+        int ans = PrintMenu();
+        do
+        {
+            PrintMenu();
+            GetMessage();
+        } while (ans == 0);
+    }
+
+    public static int PrintMenu()
+    {
+        Console.WriteLine("Please enter a valid option from below:");
+        Console.WriteLine("1. Hello in French?");
+        Console.WriteLine("2. Hello in Spanish?");
+        Console.WriteLine("3. Hello in German?");
+        Console.WriteLine("4. Hello in Italian?");
+        Console.WriteLine("0. Exit Application");
+        int ans = Convert.ToInt32(Console.ReadLine());
+
+        switch (ans)
+        {
+            case 0:
+                Console.WriteLine("You exited the application");
+                break;
+            case 1:
+                Console.WriteLine("Bonjour");
+                break;
+            case 2:
+                Console.WriteLine("Hola");
+                break;
+            case 3:
+                Console.WriteLine("Hallo");
+                break;
+            case 4:
+                Console.WriteLine("Ciao");
+                break;
+            default:
+                Console.WriteLine("Invalid answer");
+                break;
+        }
+        return ans;
+    }
+
+    public static int InputOption()
+    {
+        try
+        {
+            PrintMenu();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Please enter valid answer");
+        }
+        finally
+        {
+            Console.WriteLine("Enter a valid answer");
+        }
+        int ans = PrintMenu();
+        return ans;
+    }
+
+    public static void GetMessage()
+    {
+        int ans = PrintMenu();
+
+        if (ans == 0)
+        {
+            Console.WriteLine("Goodbye");
+        }
+        else if (ans == 1)
+        {
+            Console.WriteLine("Bonjour");
+        }
+        else if (ans == 2)
+        {
+            Console.WriteLine("Ola");
+        }
+        else if (ans == 3)
+        {
+            Console.WriteLine("Hallo");
+        }
+        else if (ans == 4)
+        {
+            Console.WriteLine("Ciao");
+        }
+        else
+        {
+            Console.WriteLine("Please enter a valid answer");
+        }
+    }
+
+    public static void CountWord()
+    {
+        int i = 0;
+        int word = 1;
+        Console.WriteLine("Enter a String: ");
+        String str = Console.ReadLine();
+
+        while (i <= str.Length - 1) {
+            if (str[i] == ' ' || str[i] == '\t') {
+                word++;
+            }
+            i++;
+        }
+        Console.WriteLine("Number of words = " + word);
+    }
+    public static void Encrypt()
+    {
+        Console.WriteLine("Enter a String :");
+        String str = Console.ReadLine();
+        Console.WriteLine("Enter number of rotations: ");
+        int rot = Convert.ToInt32(Console.ReadLine());
+
+    }
+    public static void Decropt()
+    {
+        Console.WriteLine("Enter a String :");
+        String str = Console.ReadLine();
+        Console.WriteLine("Enter number of rotations: ");
+        int rot = Convert.ToInt32(Console.ReadLine());
+
+    }
+}
